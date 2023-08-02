@@ -1,5 +1,6 @@
 import React from 'react';
 import './Preview.css'
+import SearchBar from './SearchBar'
 
 const App = () => {
   const [shows, setShows] = React.useState([]);
@@ -15,8 +16,12 @@ const App = () => {
 
   return (
     <div>
-      <h1>Podcasts</h1>
-      <ul>
+      
+      <div>
+      <SearchBar />
+      </div>
+
+      
         {shows.map((show) => (
         
         <>
@@ -25,7 +30,7 @@ const App = () => {
         <div className = "card">
 
         <div className="tittle-show">
-          <li key={show.id}>{show.title}</li>
+          <p key={show.id}>{show.title}</p>
         </div>
     
 
@@ -38,7 +43,7 @@ const App = () => {
         </>
 
         ))}
-      </ul>
+    
     </div>
   );
 };
