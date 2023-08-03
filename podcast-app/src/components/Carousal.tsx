@@ -42,7 +42,8 @@ type CarouselProps = {
   };
   return (
     <div>
-      <h3 className="carousal__heading">check</h3>
+      <marquee>
+      <h3 className="discover--text">Discover New arrivals</h3>
       <div className="carousal__container">
       <Slider {...settings}>
         {data.map((show) => {
@@ -60,6 +61,7 @@ type CarouselProps = {
         })}
       </Slider>
       </div>
+      </marquee>
   </div>
   );
 };

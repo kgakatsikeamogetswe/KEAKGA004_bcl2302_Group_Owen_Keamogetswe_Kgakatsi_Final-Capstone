@@ -2,17 +2,13 @@
 
 @media ( min-width: 300px) {
   .carousal__container{
-    margin-top: 30px;
+    
     justify-content: center;
-    border-style: outset;
-    border-width: 2px;
-    width: 85%;
+    width: 80%;
     margin-right: 0;
     margin-left: 25px;
     padding-top: 30px;
-    border-radius: 15px;
-    border-color: grey;
-    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.76);
+    
   }
 
   .slick-next {
@@ -81,15 +77,23 @@
   
   }
   
-  .carousal__heading{
+  .discover--text{
     margin-top: 40px;
     text-align: center;
     font-size: 22px;
-    font-family:'Times New Roman', Times, serif;
-    font-style: oblique;
-    font-weight: lighter;
-    color: whitesmoke;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: rgb(255, 255, 255);
+    animation: fadeInAnimation 5s ease-in-out;
   }
+  @keyframes fadeInAnimation {
+    from {
+      opacity: -2;
+    }
+    to {
+      opacity: 5;
+    }
+  }
+
 }
 
 @media ( min-width: 650px) {
@@ -285,39 +289,8 @@
 }
 }
 
-
-
-
-  
-  
-  
   .slick-prev::marker{
     font-size: 55px;
   }
 
-  
-
- /*.carousal__description{
-   overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2; 
-  line-height: 1.2em;
-  max-height: 2.4em; 
-  text-overflow: ellipsis;
-  padding-right: 15px;
-  font-weight: bolder;
-  color: rgb(160, 160, 160);
-  }
-
-  
-
- /*.overlay {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(27, 27, 27, 0.5); 
-  }*/
-  
   
