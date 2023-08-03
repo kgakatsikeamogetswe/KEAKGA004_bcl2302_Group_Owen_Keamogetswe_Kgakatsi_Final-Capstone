@@ -41,8 +41,8 @@ type CarouselProps = {
     arrows: true,
   };
   return (
-    <div>
-      <marquee>
+    <div className="marquee--container">
+      
       <h3 className="discover--text">Discover New arrivals</h3>
       <div className="carousal__container">
       <Slider {...settings}>
@@ -51,17 +51,14 @@ type CarouselProps = {
           return (
             <div key={show.id} className="carousal__slide">
               <img className="carousal__img" src={show.image} alt={show.title} />
-              <div className="overlay"></div>
-              <div className="carousal__information">
-                <h3 className="carousal__title">{show.title}</h3>
-                <h3 className="carousal__seasons">Seasons: {show.seasons}</h3>
+              <div className="carousal--information">
               </div>
             </div>
           );
         })}
       </Slider>
       </div>
-      </marquee>
+      
   </div>
   );
 };

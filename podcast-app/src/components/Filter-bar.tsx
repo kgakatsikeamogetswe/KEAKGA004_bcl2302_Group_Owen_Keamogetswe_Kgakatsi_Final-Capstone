@@ -1,4 +1,6 @@
+import { FaSearch } from 'react-icons/fa';
 import React, { useState} from "react";
+
 type AllShowData = Array<ShowPreview>;
 type ShowPreview = {
   id: string;
@@ -48,11 +50,10 @@ export const FilterBar: React.FC<FilterBarProps> = ({ onSearch, filteredShows, o
   };
   return (
     <div>
-      <h3 className="heading__check">Check out our available shows!</h3>
       <div className="filter__bar">
         <form className="search__container" onSubmit={handleSubmit}>
           <label htmlFor="search" className="search__label">
-            Search
+          <FaSearch id="search-icon" />
           </label>
           <input
             type="search"
