@@ -1,55 +1,44 @@
-// /*eslint-disable*/
+import {useNavigate} from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { supabase } from '../supabase.ts';
+import { ThemeSupa } from '@supabase/auth-ui-shared';
+import { Auth } from '@supabase/auth-ui-react';
 
-// import React from 'react'
-// import {useNavigate } from 'react-router-dom' ;
 
-// export default function  Login(props) {
+const Login = ({ onLogin, setShowAuth }) => {
 
-//     const [email, setEmail] = React.useState('');
-//     const [password, setPassword] = React.useState('');
+    const navigate = useNavigate()
+    const handleSubmit = () =>{
 
-//     const navigate = useNavigate()
+        navigate('/App')
+    }
 
-//     const handleSubmit = (event) => {
-//         event.preventDefault()
-//     }
-//     function handleLogin() {
-//         navigate("/Preview")
-//     }
+  const handleSession = (session) => {
+    if (session?.user) {
+      handleLogin(session);
 
-//     return(
-//         <div className="landing-page">
-//             <div className="page">
-//                 <h2>Login</h2>
-//         <form className="login-form" onSubmit={handleSubmit}>
+      
+    }
+  };
+  return (
+    
+    
+    <div className="login">
+      <header className="App-Header">
 
-//             <label className="landing-label" htmlFor="email">email</label>
-//             <input 
-//             value={email}
-//             type="email"
-//             placeholder="email account" 
-//             id="email"
-//             name="email"
-//             />
-
-            
-//             <label htmlFor="password">password</label>
-//             <input
-//             value={password} 
-//             type="password"
-//             placeholder="*********" 
-//             id="password"
-//             name="password"
-//             />
-            
-            
-//             <button className="btn-login" type="submit" onClick={handleLogin}>Log In</button>
-            
-            
-//         </form>
         
-//         <button className="link-btn" onClick={ ()=> props.onFormSwitch('register')}>Don't have an account? Register here.</button>
-//         </div>
-//         </div>
-//     )
-// }
+        <Auth
+          supabaseClient={supabase}
+          appearance={{ theme: ThemeSupa }}
+          theme="dark"
+          providers={['google']}
+          onClick={handleSubmit}
+          handleSession={handleSession}// Call handleLogin when the session is available
+        />
+      </header>
+      <button className="submit--button--login" className="login--btn" onClick={handleSubmit} >You may now go to the podcast</button>
+    </div>
+    
+  );
+};
+export default Login;

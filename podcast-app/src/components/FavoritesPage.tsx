@@ -36,7 +36,7 @@ export const FavoritesPage: React.FC = () => {
   const navigate = useNavigate();
 
   const backToHome = () => {
-    navigate('/');
+    navigate('/App');
   };
   
   const handleSearch = (query: string) => {
@@ -81,7 +81,7 @@ export const FavoritesPage: React.FC = () => {
     <div>
       <div className="header__container">
         <div className="left__elements">
-          <h1 className="podcast__name">Favorites</h1>
+          <h1 className="podcast__name">🔥</h1>
         </div>
         <div className="right__elements">
           <button onClick={backToHome} className="favorites__button">

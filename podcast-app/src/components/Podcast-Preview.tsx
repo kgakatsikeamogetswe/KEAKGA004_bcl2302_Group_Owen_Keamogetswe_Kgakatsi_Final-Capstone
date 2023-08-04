@@ -9,6 +9,7 @@ import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState, AppDispatch } from '../store/store';
 import { addToFavorites, removeFromFavorites} from '../store/favoritesSlice';
+import { useNavigate } from 'react-router-dom'
 
 type AllShowData = Array<ShowPreview>;
 type ShowOriginalData = Array<Show>
@@ -222,8 +223,16 @@ const handleAddToFavorites = () => {
   }
 };
 
+  const navigate = useNavigate()
+  const handlebackwards = () =>{
+    navigate('/')
+  }
+
   return (
+    
     <div>
+      <button onClick={handlebackwards}>back</button>
+
       <FilterBar
        onSearch={handleSearch}
        filteredShows={filteredShows}

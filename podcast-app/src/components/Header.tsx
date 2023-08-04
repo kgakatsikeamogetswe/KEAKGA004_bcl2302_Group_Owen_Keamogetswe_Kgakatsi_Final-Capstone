@@ -1,10 +1,14 @@
 
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import StarIcon from '@mui/icons-material/Star';
 
 
 
 export const Header = () => {
+    const navigate = useNavigate()
+  const favoritesIcon = () => {
+    navigate('/components/FavoritesPage');
+    };
   
     return(
         <div className="header__container">
@@ -15,13 +19,14 @@ export const Header = () => {
             </div>
 
             <div className="right--btn">
-            <Link to="./components/FavoritesPage">
+            
              <button 
+             onClick={favoritesIcon}
              className="fav__button"
              >
               <StarIcon id="Star-Icon" />
              </button>
-            </Link>
+            
             </div>
 
         </div>

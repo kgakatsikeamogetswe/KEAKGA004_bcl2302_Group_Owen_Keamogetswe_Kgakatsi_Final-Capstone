@@ -1,17 +1,4 @@
-// import React from 'react'
-// import ReactDOM from 'react-dom/client'
-// import App from './App.tsx';
-
-
-
-
-// ReactDOM.createRoot(document.getElementById('root')!).render(
-//   <React.StrictMode>
-//         <App/>
-//   </React.StrictMode>,
-// )
-
-
+import Login from './components/Login'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { App } from './App.tsx'
@@ -32,8 +19,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <Provider store={store}>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
-        {/* Other existing routes */}
+        <Route path="/" element={<Login/>} />
+        <Route path="/App" element={<App />} />
         <Route path="/components/FavoritesPage" element={<FavoritesPage />} />
       </Routes>
     </BrowserRouter>
