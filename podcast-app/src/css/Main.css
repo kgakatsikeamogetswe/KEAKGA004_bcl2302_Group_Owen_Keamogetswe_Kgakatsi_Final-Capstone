@@ -3,10 +3,35 @@
 }
 
 body{
-    background-image: linear-gradient(79deg, #000000, #4a4a4a 48%, #6b6b6b);
-    margin: 0;
-    padding: 0;
+    background-image: url("./src/assets/play-button.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    animation: change 10s infinite ease-in-out;
 }
+@keyframes change{
+    0%{
+        background-image: url(./src/assets/dark1.jpg);
+    }
+    20%{
+        background-image: url(./src/assets/dark2.jpg);
+    }
+    40%{
+        background-image: url(./src/assets/dark3.jpg);
+    }
+    60%{
+        background-image: url(./src/assets/dark4.jpg);
+    }
+    80%{
+        background-image: url(./src/assets/dark5.jpg);
+    }
+    100%{
+        background-image: url(./src/assets/dark1.jpg);
+    }
+}
+
 .login--btn {
     width:50%;
     margin-left: 25%;
@@ -21,3 +46,4 @@ body{
 .login--btn:hover{
     background-color: hsl(154 54.8% 45.1%);;
 }
+

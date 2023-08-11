@@ -231,7 +231,7 @@ const handleAddToFavorites = () => {
   return (
     
     <div>
-      <button onClick={handlebackwards}>back</button>
+      <button className="back-to-login" onClick={handlebackwards}>back to login</button>
 
       <FilterBar
        onSearch={handleSearch}
@@ -263,6 +263,10 @@ const handleAddToFavorites = () => {
                  {show.genres && show.genres.length > 0 ? show.genres.join(', ') : 'Not applicable'}
                </p>
              </div>
+             <p className="description--show">
+                      Description: {show.description}
+             </p>
+
              <p>Updated:  {new Date(show.updated).toLocaleDateString('en-US', { dateStyle: 'long' })}</p>
            </div>
           
@@ -277,9 +281,7 @@ const handleAddToFavorites = () => {
           <div className="blur__background" />
           <dialog className="dialog">
           <div className="selectedshow__mp3">
-            <div>
-            <img src={selectedShow.image} alt="Show image" className="blurred__background"></img>
-            </div>
+
             <img src={selectedShow.image} alt="Show image" className="selectedshow__image"></img>
             <button className="favorite__button" onClick={handleAddToFavorites}>
                 {favoriteMap[selectedShow.id] ? <FavoriteOutlinedIcon /> : <FavoriteBorderOutlinedIcon />}
